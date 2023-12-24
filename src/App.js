@@ -8,13 +8,13 @@ function Card({cardObj,faceDown=false}){
   if (faceDown) {
     return (
       <img
-        src={"/Blue_Back.svg"}
+        src={"./images/Blue_Back.svg"}
         alt="card"
       />
     )
 
   }
-  const url = "/" + cardObj.value + cardObj.suite + ".svg";
+  const url = "./images/" + cardObj.value + cardObj.suite + ".svg";
   return (
     <img 
       src={url} 
@@ -52,7 +52,7 @@ function App() {
 
       <img 
         className="buttonKey"
-        src = "/buttonKey.png"
+        src = "./images/buttonKey.png"
         alt = "Button Key"
       />
 
