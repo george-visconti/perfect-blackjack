@@ -8,13 +8,13 @@ function Card({cardObj,faceDown=false}){
   if (faceDown) {
     return (
       <img
-        src={"./images/Blue_Back.svg"}
+        src={"./perfect-blackjack/Blue_Back.svg"}
         alt="card"
       />
     )
 
   }
-  const url = "./images/" + cardObj.value + cardObj.suite + ".svg";
+  const url = "./perfect-blackjack/" + cardObj.value + cardObj.suite + ".svg";
   return (
     <img 
       src={url} 
@@ -52,7 +52,7 @@ function App() {
 
       <img 
         className="buttonKey"
-        src = "./images/buttonKey.png"
+        src = "./perfect-blackjack//buttonKey.png"
         alt = "Button Key"
       />
 
