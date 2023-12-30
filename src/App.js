@@ -62,6 +62,7 @@ function App() {
         <Card cardObj={handObj.player.card2}/>
       </div>
 
+      { !showNextButton && 
       <div className="buttons">
         <button onClick={() => handleClick(Options.Hit)}>{Options.Hit}</button>
         <button onClick={() => handleClick(Options.Stand)}>{Options.Stand}</button>
@@ -71,6 +72,7 @@ function App() {
         <button onClick={() => handleClick(Options.SplitHit)}>{Options.DoubleStand}</button>
         <button onClick={() => handleClick(Options.SurrenderHit)}>{Options.SurrenderHit}</button>
       </div>
+      }
 
       <div className="nextButton">
         {showNextButton && <button onClick={newHand}>Next</button>}
