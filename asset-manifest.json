@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/perfect-blackjack/static/css/main.95c13c0d.css",
-    "main.js": "/perfect-blackjack/static/js/main.1d1aa9be.js",
+    "main.js": "/perfect-blackjack/static/js/main.a48e8b5b.js",
     "static/js/787.69a70629.chunk.js": "/perfect-blackjack/static/js/787.69a70629.chunk.js",
     "index.html": "/perfect-blackjack/index.html",
     "main.95c13c0d.css.map": "/perfect-blackjack/static/css/main.95c13c0d.css.map",
-    "main.1d1aa9be.js.map": "/perfect-blackjack/static/js/main.1d1aa9be.js.map",
+    "main.a48e8b5b.js.map": "/perfect-blackjack/static/js/main.a48e8b5b.js.map",
     "787.69a70629.chunk.js.map": "/perfect-blackjack/static/js/787.69a70629.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95c13c0d.css",
-    "static/js/main.1d1aa9be.js"
+    "static/js/main.a48e8b5b.js"
   ]
 }
