@@ -1,23 +1,8 @@
-.App {
-  text-align: center;
-}
-
-.buttons{
-  margin: 2em;
-}
-
-button {
-  margin-left: 2em;
-}
-
-.dealers-cards{
-  margin-bottom: 2em;
-}
 
 .buttonKey {
   position:absolute;
-  top: 25px;
-  right: 25px;
+  bottom: 150px;
+  right: 125px;
 }
 
 
