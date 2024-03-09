@@ -1,5 +1,6 @@
 export {handSetUp}
 
+
 const Options = {
     Hit: "H",
     Stand: "S",
@@ -11,7 +12,17 @@ const Options = {
 
 }
 
-export {Options}
+const OptionStrings = {
+    "H": "Hit",
+    "S": "Stand",
+    "P": "Split",
+    "D/H": "Double down if possible, otherwise hit",
+    "D/S": "Double down if possible, otherwise stand",
+    "P/H": "Split if double down after split is possible, otherwise hit",
+    "R/H": "Surrender if possible, otherwise hit"
+}
+
+export {Options, OptionStrings}
 
 function mapFaceCards (card) {
     const faceCards = ["10","J","Q","K"]

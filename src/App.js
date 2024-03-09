@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import {handSetUp, Options} from './utils'
+import {handSetUp, Options, OptionStrings} from './utils'
 
 function Card({cardObj,faceDown=false}){
 
@@ -30,7 +30,7 @@ function App() {
     if (decision === handObj.answer){
       alert("You were right!");
     } else {
-      alert(`That is wrong. The correct answer was: ${handObj.answer}`)
+      alert(`That is wrong. \n The correct answer was to: ${OptionStrings[handObj.answer]}`)
     }
     setShowNextButton(true);
   }
