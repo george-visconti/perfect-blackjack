@@ -1,25 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import {handSetUp, Options, OptionStrings} from './utils'
-
-function Card({cardObj,faceDown=false}){
-
-  if (faceDown) {
-    return (
-      <img
-        src={"/perfect-blackjack/Blue_Back.svg"}
-        alt="card"
-      />
-    )
-
-  }
-  const url = "/perfect-blackjack/" + cardObj.value + cardObj.suite + ".svg";
-  return (
-    <img 
-      src={url} 
-      alt="card" />
-  )
-}
+import { PlayersHand, DealersHand } from './Hands';
 
 function App() {
 
@@ -44,12 +26,9 @@ function App() {
 
     <div className="flex flex-col flex items-center justify-center pt-10 space-y-10">
 
+      {/* Dealer's Hand */}
       <div className="space-y-2">
-        <h1 className="font-bold text-3xl text-center">Dealer's Hand</h1>
-        <div className="flex flex-row"> 
-          <Card cardObj={handObj.dealer}/>
-          <Card faceDown={true}/>
-        </div>
+        <DealersHand card={handObj.dealer} />
       </div>
 
       <img 
@@ -58,12 +37,9 @@ function App() {
         alt = "Button Key"
       />
 
+      {/* Player's Hand */}
       <div className="space-y-2">
-        <h1 className="font-bold text-3xl text-center">Players's Hand</h1>
-        <div className="flex flex-row"> 
-          <Card cardObj={handObj.player.card1}/>
-          <Card cardObj={handObj.player.card2}/>
-        </div>
+        <PlayersHand card1={handObj.player.card1} card2={handObj.player.card2} />
       </div>
 
       
@@ -107,13 +83,13 @@ function App() {
       </div>
 
 
-    <footer class="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
-        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">The correctness is based on the chart from <a 
+    <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">The correctness is based on the chart from <a 
               href="https://www.techopedia.com/gambling-guides/blackjack-strategy" 
               target="_blank" 
               rel="noopener noreferrer" 
-              class="underline">
+              className="underline">
               this site
             </a>
         
