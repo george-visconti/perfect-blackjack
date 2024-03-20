@@ -7,12 +7,13 @@ function App() {
 
   const [handObj, setHandObj] = useState(handSetUp())
   const [showNextButton, setShowNextButton] = useState(false);
+  const [feedback, setFeedback] = useState("")
 
   function handleClick(decision){
     if (decision === handObj.answer){
-      alert("You were right!");
+      setFeedback("You were right!");
     } else {
-      alert(`That is wrong. \n The correct answer was to: ${OptionStrings[handObj.answer]}`)
+      setFeedback(`That is wrong. \n The correct answer was to: ${OptionStrings[handObj.answer]}`)
     }
     setShowNextButton(true);
   }
@@ -31,11 +32,11 @@ function App() {
         <DealersHand card={handObj.dealer} />
       </div>
 
-      <img 
+      {/* <img 
         className="buttonKey"
         src = "/perfect-blackjack/buttonKey.png"
         alt = "Button Key"
-      />
+      /> */}
 
       {/* Player's Hand */}
       <div className="space-y-2">
@@ -76,10 +77,14 @@ function App() {
           </button>
         </div>}
         {showNextButton && 
+          <div className="flex flex-col flex items-center justify-center space-y-4">
           <button className="bg-indigo-500 hover:font-bold text-white  h-10 w-20 border border-black rounded"
             onClick={newHand}>
               Next
-          </button>}
+          </button>
+          <h1 className="font-bold text-2xl text-center">{feedback}</h1>
+          </div>
+        }
       </div>
 
 

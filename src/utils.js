@@ -12,6 +12,7 @@ const Options = {
 
 }
 
+
 const OptionStrings = {
     "H": "Hit",
     "S": "Stand",
@@ -20,6 +21,12 @@ const OptionStrings = {
     "D/S": "Double down if possible, otherwise stand",
     "P/H": "Split if double down after split is possible, otherwise hit",
     "R/H": "Surrender if possible, otherwise hit"
+}
+
+const Mode = {
+    Splits: "splits",
+    Softs: "softs",
+    Normal: "normal"
 }
 
 export {Options, OptionStrings}
@@ -72,7 +79,7 @@ function isFaceCard(card){
 }
 
 
-function handSetUp(){
+function handSetUp(mode=Mode.Normal){
 
     const fullDeck = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"];
     const noAceDeck = ["2","3","4","5","6","7","8","9","10","J","Q","K"];
@@ -80,7 +87,8 @@ function handSetUp(){
 
     const dealerCard = pickCard(fullDeck);
     const playerCard1 = pickCard(fullDeck);
-    const playerCard2 = isFaceCard(playerCard1) ? pickCard(noAceDeck) : playerCard1 === "A" ? pickCard(noFaceDeck) : pickCard(fullDeck);
+    // ensure we don't deal the player 21 ever
+    const playerCard2 = mode === Mode.Splits ? playerCard1 : isFaceCard(playerCard1) ? pickCard(noAceDeck) : playerCard1 === "A" ? pickCard(noFaceDeck) : pickCard(fullDeck);
     const answer = correctAnswer(dealerCard,playerCard1,playerCard2);
 
     return {
